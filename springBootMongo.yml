@@ -1,6 +1,6 @@
 # Config Map
 kind: ConfigMap 
-apiVersion: v1 
+apiVersion: apps/v1 
 metadata:
   name: springapp-configmap
 data:
@@ -9,12 +9,12 @@ data:
   password: mongodb@123
 ---
 # Replication Controller for springapp
-apiVersion: v1
+apiVersion: apps/v1
 kind: ReplicationController
 metadata:
   name: spring-controller
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     app: springboot
   template:
